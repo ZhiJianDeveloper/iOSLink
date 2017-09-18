@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h7u-SP-dEF">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="7M2-YP-SaF">
+            <objects>
+                <viewController id="h7u-SP-dEF" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="41U-1X-OT3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lvf-Pm-roO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fmo-Th-zbl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-RT-ul2">
+                                <rect key="frame" x="65" y="201" width="62" height="30"/>
+                                <state key="normal" title="开始配网"/>
+                                <connections>
+                                    <action selector="startTransmitting:" destination="h7u-SP-dEF" eventType="touchUpInside" id="LYD-bT-zMk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入WiFi密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-1e-QKF">
+                                <rect key="frame" x="46" y="131" width="228" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-rJ-f5T">
+                                <rect key="frame" x="193" y="201" width="62" height="30"/>
+                                <state key="normal" title="停止配网"/>
+                                <connections>
+                                    <action selector="stopTransmitting:" destination="h7u-SP-dEF" eventType="touchUpInside" id="eOI-Q5-sUl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先点击印章配网键,红蓝灯双亮后,马上点击app 开始配网" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-CT-2yp">
+                                <rect key="frame" x="26" y="70" width="268" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ymu-rJ-f5T" firstAttribute="centerX" secondItem="Fmo-Th-zbl" secondAttribute="centerX" multiplier="1.4" id="1rv-UT-SSc"/>
+                            <constraint firstItem="dFd-1e-QKF" firstAttribute="leading" secondItem="Fmo-Th-zbl" secondAttribute="leadingMargin" constant="30" id="3JP-pn-kjA"/>
+                            <constraint firstItem="Nbf-CT-2yp" firstAttribute="leading" secondItem="Fmo-Th-zbl" secondAttribute="leadingMargin" constant="10" id="8Ch-5r-Hj4"/>
+                            <constraint firstItem="WUb-RT-ul2" firstAttribute="top" secondItem="dFd-1e-QKF" secondAttribute="bottom" constant="40" id="A7d-Pi-eLe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nbf-CT-2yp" secondAttribute="trailing" constant="10" id="DsU-DL-1xj"/>
+                            <constraint firstItem="dFd-1e-QKF" firstAttribute="top" secondItem="Nbf-CT-2yp" secondAttribute="bottom" constant="20" id="Rhj-YX-VlF"/>
+                            <constraint firstItem="Nbf-CT-2yp" firstAttribute="top" secondItem="41U-1X-OT3" secondAttribute="bottom" constant="50" id="fTD-bb-sHu"/>
+                            <constraint firstItem="Ymu-rJ-f5T" firstAttribute="top" secondItem="WUb-RT-ul2" secondAttribute="top" id="gJT-fc-2xX"/>
+                            <constraint firstItem="WUb-RT-ul2" firstAttribute="centerX" secondItem="Fmo-Th-zbl" secondAttribute="centerX" multiplier="0.6" id="n6k-4U-36C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFd-1e-QKF" secondAttribute="trailing" constant="30" id="snr-jB-RRH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textFiled" destination="dFd-1e-QKF" id="wue-bf-O6r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxV-Wp-Rjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="-273.01349325337333"/>
+        </scene>
+    </scenes>
+</document>
