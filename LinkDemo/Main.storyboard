@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h7u-SP-dEF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sGG-cf-cz3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--配网-->
         <scene sceneID="7M2-YP-SaF">
             <objects>
                 <viewController id="h7u-SP-dEF" customClass="ViewController" sceneMemberID="viewController">
@@ -24,27 +24,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-RT-ul2">
-                                <rect key="frame" x="65" y="201" width="62" height="30"/>
+                                <rect key="frame" x="65" y="245" width="62" height="30"/>
                                 <state key="normal" title="开始配网"/>
                                 <connections>
                                     <action selector="startTransmitting:" destination="h7u-SP-dEF" eventType="touchUpInside" id="LYD-bT-zMk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入WiFi密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFd-1e-QKF">
-                                <rect key="frame" x="46" y="131" width="228" height="30"/>
+                                <rect key="frame" x="46" y="175" width="228" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-rJ-f5T">
-                                <rect key="frame" x="193" y="201" width="62" height="30"/>
+                                <rect key="frame" x="193" y="245" width="62" height="30"/>
                                 <state key="normal" title="停止配网"/>
                                 <connections>
                                     <action selector="stopTransmitting:" destination="h7u-SP-dEF" eventType="touchUpInside" id="eOI-Q5-sUl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先点击印章配网键,红蓝灯双亮后,马上点击app 开始配网" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-CT-2yp">
-                                <rect key="frame" x="26" y="70" width="268" height="41"/>
+                                <rect key="frame" x="26" y="114" width="268" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,13 +64,83 @@
                             <constraint firstAttribute="trailingMargin" secondItem="dFd-1e-QKF" secondAttribute="trailing" constant="30" id="snr-jB-RRH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="配网" id="3Tj-8r-peP">
+                        <barButtonItem key="rightBarButtonItem" title="mDNS" id="Srt-eA-Us8">
+                            <connections>
+                                <segue destination="Ewc-lb-ndZ" kind="push" id="Zii-gJ-DGj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textFiled" destination="dFd-1e-QKF" id="wue-bf-O6r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxV-Wp-Rjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="-273.01349325337333"/>
+            <point key="canvasLocation" x="1368.75" y="-273.59154929577466"/>
+        </scene>
+        <!--mDNS-->
+        <scene sceneID="sfc-Bm-0lq">
+            <objects>
+                <tableViewController id="Ewc-lb-ndZ" customClass="ZJBrowserBonjourController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OqB-sY-5lg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ID" textLabel="XGf-iK-gCi" detailTextLabel="fux-F2-djn" style="IBUITableViewCellStyleSubtitle" id="O0E-9t-CZ0">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O0E-9t-CZ0" id="7O2-BH-Vgt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XGf-iK-gCi">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fux-F2-djn">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ewc-lb-ndZ" id="8mq-3o-lpW"/>
+                            <outlet property="delegate" destination="Ewc-lb-ndZ" id="PLB-Ju-xd4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="mDNS" id="sOk-SB-1iM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zN6-iu-2cw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2193" y="-275"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Pq-9h-Fgj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGG-cf-cz3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x4j-on-9Xa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h7u-SP-dEF" kind="relationship" relationship="rootViewController" id="MGY-5U-tuy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ynG-5A-hb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371.25" y="-273.59154929577466"/>
         </scene>
     </scenes>
 </document>
